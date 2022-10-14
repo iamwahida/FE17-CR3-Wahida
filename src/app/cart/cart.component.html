@@ -1,1 +1,39 @@
-<p>cart works!</p>
+
+<div class="shopping-cart">
+<!-- order products in the cart -->
+    <div class="container mt-4 mb-4 d-flex justify-content-center">
+        <div *ngFor="let item of items" class="card mb-3 gap-2 shadow-lg p-3 mb-5 bg-body rounded" style="max-width: 800px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="/assets/images/{{item.image}}" class="img-fluid rounded-start" style="width: 100%;" alt="">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <p class="card-text">{{item.price | currency: "EUR"}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- formular for the delivery -->
+<div class="container mb-3">
+  <h5 class="font">Order Form</h5>
+  <hr>
+  <p>Please fill up the info for the delivery.</p>
+  <hr>
+  <form [formGroup]="profileForm">
+    <label class="m-2" for="first-name">Name:</label>
+    <br>
+    <input class="mb-3" id="first-name" type="text" formControlName="firstName">
+    <br>
+    <label class="m-2" for="last-name">Address: </label>
+    <br>
+    <input class="mb-3" id="last-name" type="text" formControlName="lastName">
+    <br>
+    <button class="purchase" >Purchase</button>
+  </form>
+</div>
+</div>

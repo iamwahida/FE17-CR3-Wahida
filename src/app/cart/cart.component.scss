@@ -1,0 +1,23 @@
+
+.shopping-cart {
+    height: 900px;
+}
+
+.font {
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.purchase {
+    background-color: rgb(218, 114, 29);
+    color: white;
+    border-color: orange;
+    padding: 10px;
+    border-radius: 20px;
+
+    &:hover {
+        color: black;
+        transform: scale(1.2);
+    }
+}

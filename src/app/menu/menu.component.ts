@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { products } from '../products/products';
+import { IProducts } from '../products/IProducts';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  products: Array<IProducts> = products;
+  index: IProducts = {} as IProducts;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cs: CartService) { }
+  ngOnInit(): void { 
   }
 
+  addToCart () {
+    alert("Your product has been added :)");
+    this.cs.addToCart (this.index);
+  }
 }
